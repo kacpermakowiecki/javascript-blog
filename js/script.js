@@ -61,11 +61,11 @@ function generateTitleLinks() {
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* create HTML of the link */
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
     console.log(`linkHTML ${linkHTML}`);
 
     /* insert link into titleList */
-    html = html + linkHTML;
+    html += linkHTML;
   }
 
   titleList.innerHTML = html;
@@ -79,3 +79,4 @@ function generateTitleLinks() {
 }
 
 generateTitleLinks();
+
