@@ -269,10 +269,10 @@ function authorClickHandler(event) {
   const linkhrefs = document.querySelectorAll('a[href="' + href + '"]');
 
   /* START LOOP: for each found tag link */
-  for (let linkHref of linkhrefs) {
+  for (let linkhref of linkhrefs) {
 
     /* add class active */
-    linkHref.classList.add('active');
+    linkhref.classList.add('active');
 
     /* END LOOP: for each found tag link */
   }
