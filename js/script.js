@@ -145,10 +145,10 @@ function tagClickHandler(event) {
   const tag = href.replace('#tag-', '');
 
   /* find all tag links with class active */
-  const ActiveTags = document.querySelectorAll('a.active[href^="#tag-"]');
+  const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
 
   /* START LOOP: for each active tag link */
-  for (let activeTag of ActiveTags) {
+  for (let activeTag of activeTags) {
 
 
     /* remove class active */
@@ -227,10 +227,10 @@ generateAuthors();
 
 function addClickListenersToAuthors() {
   /* find all links to autors */
-  const LinksAutors = document.querySelectorAll('a[href^="#author-"]');
+  const linksAutors = document.querySelectorAll('a[href^="#author-"]');
 
   /* START LOOP: for each link */
-  for (let link of LinksAutors) {
+  for (let link of linksAutors) {
 
     /* add tagClickHandler as event listener for that link */
     link.addEventListener('click', authorClickHandler);
