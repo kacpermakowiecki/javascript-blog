@@ -257,10 +257,10 @@ function authorClickHandler(event) {
   const authorLinks = document.querySelectorAll('a.active[href^="#author-"]');
 
   /* START LOOP: for each active tag link */
-  for (let authorlink of authorLinks) {
+  for (let authorLink of authorLinks) {
 
     /* remove class active */
-    authorlink.classList.remove('active');
+    authorLink.classList.remove('active');
 
     /* END LOOP: for each active tag link */
   }
