@@ -266,13 +266,13 @@ function authorClickHandler(event) {
   }
 
   /* find all tag links with "href" attribute equal to the "href" constant */
-  const linkhrefs = document.querySelectorAll('a[href="' + href + '"]');
+  const linkHrefs = document.querySelectorAll('a[href="' + href + '"]');
 
   /* START LOOP: for each found tag link */
-  for (let linkhref of linkhrefs) {
+  for (let linkHref of linkHrefs) {
 
     /* add class active */
-    linkhref.classList.add('active');
+    linkHref.classList.add('active');
 
     /* END LOOP: for each found tag link */
   }
