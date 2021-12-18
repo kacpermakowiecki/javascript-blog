@@ -213,7 +213,7 @@ function generateAuthors() {
     console.log(autorlinkHTML);
 
     /* add generated code to html variable */
-    html += autorlinkHTML + '';
+    html += autorlinkHTML;
 
     /* END LOOP: for each tag */
 
@@ -279,4 +279,3 @@ function authorClickHandler(event) {
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks(`[data-author="${tag}"]`);
 }
-authorClickHandler();
