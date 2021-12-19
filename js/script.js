@@ -39,7 +39,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAutorSelector = '.post-author';
+  optArticleAuthorSelector ='.post-author',
+  optTagsListSelector = '.tags.list';
 
 function generateTitleLinks(customSelector = '') {
 
@@ -83,6 +84,10 @@ function generateTitleLinks(customSelector = '') {
 generateTitleLinks();
 
 function generateTags() {
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = {};
+  console.log(allTags);
+
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
@@ -92,8 +97,8 @@ function generateTags() {
     console.log(article);
 
     /* find tags wrapper */
-    const tagswraper = article.querySelector(optArticleTagsSelector);
-    console.log(tagswraper);
+    const tagsWraper = article.querySelector(optArticleTagsSelector);
+    console.log(tagsWraper);
 
     /* make html variable with empty string */
     let html = '';
@@ -114,17 +119,35 @@ function generateTags() {
       console.log(linkHTML);
 
       /* add generated code to html variable */
-      html += linkHTML + ' ';
+      html += linkHTML;
 
+      /* [NEW] check if this link is NOT already in allTags */
+      if (!allTags[tag]) {
+        /* [NEW] add generated code to allTags array */
+        allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
+      }
       /* END LOOP: for each tag */
     }
-
     /* insert HTML of all the links into the tags wrapper */
-    tagswraper.innerHTML = html;
-
+    tagsWraper.innerHTML = html;
 
     /* END LOOP: for every article: */
   }
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector(optTagsListSelector);
+
+  /* [NEW] add html from allTags to tagList */
+  //tagList.innerHTML = allTags.join(' ');
+  let allTagsHTML='';
+  /* [NEW] start loop for each tag in allTags */
+  for(let tag in allTags){
+    /* [NEW] generate code of link and add it to AllTagsHTML */
+    allTagsHTML += tag + '(' + allTags[tag] + ')';
+  }
+  /* [NEW] add HTML from allTahsHTML to taglist */
+  tagList.innerHTML = allTagsHTML;
 }
 
 generateTags();
@@ -198,7 +221,7 @@ function generateAuthors() {
     console.log(article);
 
     /* find Autors */
-    const authorList = article.querySelector(optArticleAutorSelector);
+    const authorList = article.querySelector(optArticleAuthorSelector);
     console.log(authorList);
 
     /* make html variable with empty string */
