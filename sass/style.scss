@@ -118,4 +118,35 @@ body {
     margin: 0 10px 0 0;
   }
 }
+/* Tags */
+
+.tag-size-1 {
+  font-size: 20px;
+  color: #6a89cc;
+}
+
+.tag-size-2 {
+  font-size: 25px;
+  color: #b71540;
+}
+
+.tag-size-3 {
+  font-size: 30px;
+  color: #3c6382;
+}
+
+.tag-size-4 {
+  font-size: 35px;
+  color: #0a3d62;
+}
+
+.tag-size-5 {
+  font-size: 40px;
+  color: #0c2461;
+}
+
+.tags li {
+  display: inline-block;
+  margin: 0 4px;
+}
 
