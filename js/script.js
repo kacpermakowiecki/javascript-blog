@@ -345,6 +345,7 @@ function generateAuthors() {
     allAuthorsData.authors.push({
       author: author,
       count: allAuthors[author],
+      className:calculateAuthorClass(allAuthors[author], authorParams)
     });
   }
   /* insert HTML of all the links into the tags wrapper */
